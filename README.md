@@ -1,7 +1,9 @@
+[![Build Status](https://travis-ci.org/lizmat/EERPG.svg?branch=master)](https://travis-ci.org/lizmat/EERPG)
+
 NAME
 ====
 
-EERPG - blah blah blah
+EERPG - Emergent Economies for Role Playing Games
 
 SYNOPSIS
 ========
@@ -11,12 +13,14 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-EERPG is ...
+EERPG is an implementation of the "Emergent Economies for Role Playing Games" white paper by Jonathan Doran and Ian Parberry.
 
 AUTHOR
 ======
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+Source can be located at: https://github.com/lizmat/EERPG . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================

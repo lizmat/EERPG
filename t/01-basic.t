@@ -13,12 +13,13 @@ use EERPG::Currency;
 use EERPG::Economy;
 use EERPG::Inventory;
 use EERPG::Market;
-use EERPG::Produce;
 use EERPG::Producer;
 use EERPG::Resource;
 use EERPG::Rule;
 use EERPG::Ruleset;
 use EERPG::Trader;
+
+pass "All modules compiled";
 
 my @currencies = EERPG::Currency.new( name => 'Credit', nick => 'credit' );
 
@@ -55,7 +56,5 @@ my @markets = (
 my $economy = EERPG::Economy.new(
   name => "After Catastrophe", :@markets, :@currencies, :@commodities
 );
-
-dd $economy;
 
 # vim: ft=perl6 expandtab sw=4
