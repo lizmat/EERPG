@@ -13,12 +13,14 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games" white paper by Jonathan Doran and Ian Parberry.
+The `EERPG` role provides all functionality shared by all objects in the `EERPG` distribution.
 
 AUTHOR
 ======
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games" white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and Pull Requests are welcome.
 
