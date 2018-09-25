@@ -1,10 +1,7 @@
 use v6.c;
 
-unit role EERPG:ver<0.0.1>:auth<cpan:ELIZABETH>;
-has Str $.name;
-
-method name() { "{self.^name.substr(7)}: { $!name // self.WHICH }" }
-method Str()  { self.name }
+role EERPG:ver<0.0.1>:auth<cpan:ELIZABETH> {
+}
 
 =begin pod
 
@@ -14,16 +11,19 @@ EERPG - Emergent Economies for Role Playing Games
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG;
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<EERPG> role provides all functionality shared by all objects in the
+C<EERPG> distribution.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

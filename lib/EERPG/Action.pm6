@@ -8,7 +8,7 @@ role EERPG::Action:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 {
     has EERPG::Commodity $.commodity;
-    has EERPG::Price     $.difference;
+    has EERPG::Price     $.price;
     has Numeric          $.chance = 1;
 }
 

@@ -1,13 +1,18 @@
 use v6.c;
 
-class EERPG::Amount:ver<0.0.1>:auth<cpan:ELIZABETH> is Int {
+use EERPG;
+
+class EERPG::Amount:ver<0.0.1>:auth<cpan:ELIZABETH>
+    is Int
+  does EERPG
+{
 }
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Amount - EERPG Amount object
+EERPG::Amount - EERPG Amount class
 
 =head1 SYNOPSIS
 

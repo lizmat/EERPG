@@ -15,7 +15,7 @@ role EERPG::Ask:ver<0.0.1>:auth<cpan:ELIZABETH>
 
 =head1 NAME
 
-EERPG::Ask - EERPG Ask role / object
+EERPG::Ask - EERPG Ask role / class
 
 =head1 SYNOPSIS
 

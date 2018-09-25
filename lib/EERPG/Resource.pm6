@@ -10,16 +10,19 @@ EERPG::Resource - EERPG Resource role
 
 =head1 SYNOPSIS
 
-  use EERPG::Resource;  # indicate the object is a resource
+    use EERPG::Resource;  # indicate the object is a resource
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Resource> role is only intended to mark objects as a resource.
+It is not intended to be used as a class.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

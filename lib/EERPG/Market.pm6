@@ -1,33 +1,43 @@
 use v6.c;
 
 use EERPG;
+use EERPG::Name;
 use EERPG::Producer;
 use EERPG::Trader;
 
-unit role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
-;
-has EERPG::Producer @.producers;
-has EERPG::Trader   @.traders;
+  does EERPG::Name
+{
+    has EERPG::Producer @.producers;
+    has EERPG::Trader   @.traders;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Market - EERPG Market object
+EERPG::Market - EERPG Market role / class
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Market;
+
+    my $market = EERPG::Market.new(
+      name => 'Bazar', :@producers, :@traders
+    );
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Market> role / class contains the information needed to run a local
+market.  It requires a L<Name>, and should have L<Producers>s and L<Trader>s.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

@@ -16,7 +16,7 @@ class EERPG::Price:ver<0.0.1>:auth<cpan:ELIZABETH> is Int {
 
 =head1 NAME
 
-EERPG::Price - EERPG Price object
+EERPG::Price - EERPG Price class
 
 =head1 SYNOPSIS
 

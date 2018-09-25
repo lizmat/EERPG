@@ -1,31 +1,41 @@
 use v6.c;
 
 use EERPG::Agent;
-use EERPG::Resource;
+use EERPG::Ruleset;
 
-unit role EERPG::Producer:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Producer:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Agent          # Producer is an Agent
-  does EERPG::Resource       # Producer is a Resource
-;
+{
+    has EERPG::Ruleset $.ruleset is required;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Producer - EERPG Producer object
+EERPG::Producer - EERPG Producer role / class
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Producer;
+
+    my $producer = EERPG::Producer.new(
+      name => 'Old McDonalds', :$market, :$inventory, :$ruleset
+    )
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Producer> role / class is an L<Agent> that can produce L<Commodity>
+according to a given L<Ruleset>.  It takes a L<Name>, a L<Market> with which
+the C<Producer> is associated, an L<Inventory> of L<Commodity> and a
+L<Ruleset> for producing L<Commodity>.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

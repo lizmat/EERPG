@@ -3,29 +3,35 @@ use v6.c;
 use EERPG;
 use EERPG::Rule;
 
-unit role EERPG::Ruleset:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Ruleset:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
-;
-has EERPG::Rule @.rules;
+{
+    has EERPG::Rule @.rules;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Ruleset - EERPG Ruleset object
+EERPG::Ruleset - EERPG Ruleset role / class
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Ruleset;
+
+    my $ruleset = EERPG::Ruleset.new( :@rules );
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Ruleset> role / class store a set of L<Rule>s to be used by a
+L<Producer> to produce L<Commodity>.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

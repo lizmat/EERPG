@@ -1,32 +1,31 @@
 use v6.c;
 
-use EERPG;
-use EERPG::Action;
-use EERPG::Condition;
+role EERPG::Name:ver<0.0.1>:auth<cpan:ELIZABETH> {
+    has Str $.name is required;
 
-role EERPG::Rule:ver<0.0.1>:auth<cpan:ELIZABETH>
-  does EERPG
-{
-    has EERPG::Condition @.conditions is required;
-    has EERPG::Action    @.actions    is required;
+    method name() { "{self.^name.substr(7)}: $!name" }
+    method Str()  { self.name }
 }
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Rule - EERPG Rule role / class
+EERPG::Name - role for objects with a name
 
 =head1 SYNOPSIS
 
-    use EERPG::Rule;
+    use EERPG::Name;
 
-    my $rule = EERPG::Rule.new( :@conditions, :@actions );
+    class Foo does EERPG::Name {
+    }
+
+    Foo.new( name => "Bar" );
 
 =head1 DESCRIPTION
 
-The C<Rule> role / class contains a list of C<Condition>s that should all
-return C<True> before all of the L<Actions> are performed.
+The C<Name> role is a role for C<EERPG> objects that must have a name.
+It is B<not> intended to be used as a class.
 
 =head1 AUTHOR
 

@@ -3,28 +3,37 @@ use v6.c;
 use EERPG;
 use EERPG::Commodity;
 
-unit role EERPG::Currency:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Currency:ver<0.0.1>:auth<cpan:ELIZABETH>
+  does EERPG
   does EERPG::Commodity    # A Currency is a Commodity
-;
+{
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Currency - EERPG Currency object
+EERPG::Currency - EERPG Currency role / object
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Currency;
+
+    my $credit = Currency.new( name => 'Credit' );  # nick = credit
+
+    my $credit = Currency.new( name => 'Credit', nick => 'dough' );
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Currency> role / class describes a currency to be used to express
+L<Price>s in.  It has a L<Name> and an optional nick(name).
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

@@ -2,9 +2,13 @@ use v6.c;
 
 use EERPG;
 use EERPG::Inventory;
+use EERPG::Name;
+use EERPG::Resource;
 
 role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
+  does EERPG::Name      # Agent must have a name
+  does EERPG::Resource  # Agents are a Resource
 {
     # cannot enforce EERPG::Market here because of circularity
     has                  $.market    is required; # Agent belongs to a Market
@@ -24,12 +28,14 @@ EERPG::Agent - EERPG Agent role
     class Person does EERPG::Agent {
     }
 
+    Person.new( :$name, :$market, :$inventory );
+
 =head1 DESCRIPTION
 
 The C<Agent> role should be consumed by classes that can be used as one
 of the C<NPC>'s (Non-Playing Characters), such as a L<Trader> or a L<Producer>.
-Such an object should always provide the L<Market> it belongs to, as well
-as an L<Inventory>.
+Such an object should always provide the L<Name> of the agent, the L<Market>
+it belongs to, as well as an L<Inventory>.
 
 =head1 AUTHOR
 

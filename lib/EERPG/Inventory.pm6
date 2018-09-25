@@ -3,29 +3,35 @@ use v6.c;
 use EERPG;
 use EERPG::Commodity;
 
-unit role EERPG::Inventory:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Inventory:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
-;
-has %.commodities is BagHash;
+{
+    has %.commodities is BagHash;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Inventory - EERPG Inventory object
+EERPG::Inventory - EERPG Inventory role / class
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Inventory;
+
+    my $inventory = EERPG::Inventory.new( :%commodities );
 
 =head1 DESCRIPTION
 
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
+The C<Inventory> role / class provides the place to store the posessions
+of L<Agent>s such as a L<Trader> or a L<Producer>.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.

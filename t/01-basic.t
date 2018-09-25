@@ -9,7 +9,7 @@ pass "All modules compiled";
 my $*CURRENCY = Currency.new( name => 'Credit', nick => 'credit' );
 
 my $price = Price.new(42);
-say $price;
+#say $price;
 
 my @commodities = (
   Armor       => 'armor',
@@ -45,6 +45,6 @@ my $economy = Economy.new(
   name => "After Catastrophe", :@markets, :@commodities
 );
 
-put $economy;
+#dd $economy;
 
 # vim: ft=perl6 expandtab sw=4

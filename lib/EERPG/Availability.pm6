@@ -1,24 +1,27 @@
 use v6.c;
 
+use EERPG;
 use EERPG::Commodity;
 use EERPG::Condition;
 use EERPG::Inventory;
 
-unit class EERPG::Availability:ver<0.0.1>:auth<cpan:ELIZABETH>
+class EERPG::Availability:ver<0.0.1>:auth<cpan:ELIZABETH>
+  does EERPG
   does EERPG::Condition
-;
-has EERPG::Commodity $.commodity;
-has Int              $.required;
+{
+    has EERPG::Commodity $.commodity;
+    has Int              $.required;
 
-method enough-in(EERPG::Inventory:D $inventory = $*INVENTORY --> Bool:D) {
-    $inventory.commodoties{$!commodity.name} >= $!required
+    method enough-in(EERPG::Inventory:D $inventory = $*INVENTORY --> Bool:D) {
+        $inventory.commodoties{$!commodity.name} >= $!required
+    }
 }
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Availability - EERPG Availability object
+EERPG::Availability - EERPG Availability class
 
 =head1 SYNOPSIS
 

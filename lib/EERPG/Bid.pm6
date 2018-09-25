@@ -1,29 +1,34 @@
 use v6.c;
 
 use EERPG;
+use EERPG::Amount;
+use EERPG::Price;
 
-unit role EERPG::Bid:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Bid:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
-;
+{
+    has EERPG::Price  $.price is required;
+    has EERPG::Amount $.ideal is required;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Bid - EERPG Bid object
+EERPG::Bid - EERPG Bid role / class
 
 =head1 SYNOPSIS
 
-  use EERPG;
+    use EERPG::Bid;
 
 =head1 DESCRIPTION
-
-EERPG is an implementation of the "Emergent Economies for Role Playing Games"
-white paper by Jonathan Doran and Ian Parberry.
 
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
+
+EERPG is an implementation of the "Emergent Economies for Role Playing Games"
+white paper by Jonathan Doran and Ian Parberry.
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.
