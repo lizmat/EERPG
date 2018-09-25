@@ -3,6 +3,9 @@ use v6.c;
 unit role EERPG:ver<0.0.1>:auth<cpan:ELIZABETH>;
 has Str $.name;
 
+method name() { "{self.^name.substr(7)}: { $!name // self.WHICH }" }
+method Str()  { self.name }
+
 =begin pod
 
 =head1 NAME

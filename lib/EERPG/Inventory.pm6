@@ -6,7 +6,7 @@ use EERPG::Commodity;
 unit role EERPG::Inventory:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 ;
-has EERPG::Commodity @.commodities;
+has %.commodities is BagHash;
 
 =begin pod
 

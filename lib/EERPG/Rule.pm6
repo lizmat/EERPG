@@ -1,13 +1,13 @@
 use v6.c;
 
 use EERPG;
-use EERPG::Condition;
 use EERPG::Action;
+use EERPG::Condition;
 
 unit role EERPG::Rule:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 ;
-has EERPG::Condition $.condition;
+has EERPG::Condition @.conditions;
 has EERPG::Action    @.actions;
 
 =begin pod

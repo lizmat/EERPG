@@ -1,27 +1,24 @@
 use v6.c;
 
-use EERPG;
-use EERPG::Amount;
-use EERPG::Price;
-
-role EERPG::Ask:ver<0.0.1>:auth<cpan:ELIZABETH>
-  does EERPG
-{
-    has EERPG::Price  $.price is required;
-    has EERPG::Amount $.ideal is required;
+class EERPG::Amount:ver<0.0.1>:auth<cpan:ELIZABETH> is Int {
 }
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Ask - EERPG Ask role / object
+EERPG::Amount - EERPG Amount object
 
 =head1 SYNOPSIS
 
-    use EERPG::Ask;
+    use EERPG::Amount;
+
+    my $amount = EERPG::Amount.new(42);
 
 =head1 DESCRIPTION
+
+The C<Amount> class is just a convenient way to make sure we don't mix up
+Integers with actual amounts of e.g. L<Commodity>.
 
 =head1 AUTHOR
 

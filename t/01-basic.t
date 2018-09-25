@@ -3,25 +3,13 @@ use Test;
 
 plan 1;
 
-use EERPG::Action;
-use EERPG::Agent;
-use EERPG::Ask;
-use EERPG::Bid;
-use EERPG::Commodity;
-use EERPG::Condition;
-use EERPG::Currency;
-use EERPG::Economy;
-use EERPG::Inventory;
-use EERPG::Market;
-use EERPG::Producer;
-use EERPG::Resource;
-use EERPG::Rule;
-use EERPG::Ruleset;
-use EERPG::Trader;
-
+use EERPG::All;
 pass "All modules compiled";
 
-my @currencies = EERPG::Currency.new( name => 'Credit', nick => 'credit' );
+my $*CURRENCY = Currency.new( name => 'Credit', nick => 'credit' );
+
+my $price = Price.new(42);
+say $price;
 
 my @commodities = (
   Armor       => 'armor',
@@ -34,7 +22,7 @@ my @commodities = (
   Ore         => 'ore',
   Weapon      => 'weapon',
   Water       => 'water',
-).map: { EERPG::Commodity.new( name => .key, nick => .value ) }
+).map: { Commodity.new( name => .key, nick => .value ) }
 
 my @markets = (
   "Tau Station",
@@ -43,7 +31,7 @@ my @markets = (
   "Taungoo Station",
   "Nouveau Limoges",
   "Sol Jump Gate",
-  "Alpha Centauri Jump Gate	7",
+  "Alpha Centauri Jump Gate 7",
   "Moissan Station",
   "Paris Spatiale",
   "The Ghost of Mali",
@@ -51,10 +39,12 @@ my @markets = (
   "Spirit of Botswana",
   "Bordeaux Station",
   "Yards of Gadani",
-).map: { EERPG::Market.new( name => $_ ) }
+).map: { Market.new( name => $_ ) }
 
-my $economy = EERPG::Economy.new(
-  name => "After Catastrophe", :@markets, :@currencies, :@commodities
+my $economy = Economy.new(
+  name => "After Catastrophe", :@markets, :@commodities
 );
+
+put $economy;
 
 # vim: ft=perl6 expandtab sw=4

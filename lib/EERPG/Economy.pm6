@@ -12,6 +12,9 @@ has EERPG::Currency  @.currencies;
 has EERPG::Market    @.markets;
 has EERPG::Commodity @.commodities;
 
+method TWEAK() {
+    @!currencies.push($*CURRENCY) unless @!currencies;
+}
 method currency() { @!currencies[0] }
 
 =begin pod

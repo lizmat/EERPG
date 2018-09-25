@@ -1,11 +1,15 @@
 use v6.c;
 
+use EERPG;
 use EERPG::Resource;
 
 unit role EERPG::Commodity:ver<0.0.1>:auth<cpan:ELIZABETH>
+  does EERPG
   does EERPG::Resource    # A Commodity is a Resource
 ;
 has Str $.nick;
+
+method Str() { $!nick // $.name }
 
 =begin pod
 

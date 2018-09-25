@@ -1,5 +1,6 @@
 use v6.c;
 
+use EERPG;
 use EERPG::Commodity;
 
 unit role EERPG::Currency:ver<0.0.1>:auth<cpan:ELIZABETH>
