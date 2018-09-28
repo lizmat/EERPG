@@ -11,8 +11,9 @@ role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Resource  # Agents are a Resource
 {
     # cannot enforce EERPG::Market here because of circularity
-    has                  $.market    is required; # Agent belongs to a Market
-    has EERPG::Inventory $.inventory is required; # Agent has an Inventory
+    has                  $.market    is required;  # Agent belongs to a Market
+    has EERPG::Inventory $.inventory is required;  # Agent has an Inventory
+    has Int              $.default-volatility = 3; # default price volatility
 }
 
 =begin pod
@@ -28,7 +29,7 @@ EERPG::Agent - EERPG Agent role
     class Person does EERPG::Agent {
     }
 
-    Person.new( :$name, :$market, :$inventory );
+    Person.new( :$name, :$market, :$inventory, default-volatility => 7 );
 
 =head1 DESCRIPTION
 
@@ -36,6 +37,10 @@ The C<Agent> role should be consumed by classes that can be used as one
 of the C<NPC>'s (Non-Playing Characters), such as a L<Trader> or a L<Producer>.
 Such an object should always provide the L<Name> of the agent, the L<Market>
 it belongs to, as well as an L<Inventory>.
+
+An optional C<default-volatility> can be specified to be used as a default
+for adapting C<Price> C<Belief>s on successful / failed trades.  By default
+a value of B<3> will be assumed.
 
 =head1 AUTHOR
 

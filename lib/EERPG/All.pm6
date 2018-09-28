@@ -6,6 +6,7 @@ use EERPG::Agent;
 use EERPG::Amount;
 use EERPG::Ask;
 use EERPG::Availability;
+use EERPG::Belief;
 use EERPG::Bid;
 use EERPG::Commodity;
 use EERPG::Condition;
