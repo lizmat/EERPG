@@ -3,8 +3,8 @@ use v6.c;
 role EERPG::Name:ver<0.0.1>:auth<cpan:ELIZABETH> {
     has Str $.name is required;
 
-    method name() { "{self.^name.substr(7)}: $!name" }
-    method Str()  { self.name }
+    method name(--> Str:D) { $!name }
+    method Str( --> Str:D) { "{self.^name.substr(7)}: $.name" }
 }
 
 =begin pod

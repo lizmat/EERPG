@@ -18,10 +18,10 @@ role EERPG::Belief:ver<0.0.1>:auth<cpan:ELIZABETH>
         EERPG::Price.new( ($!min .. $!max).pick, $currency)
     }
 
-    method failed-ask(    EERPG::Price $price --> Nil) { ... }
-    method successful-ask(EERPG::Price $price --> Nil) { ... }
-    method failed-bid(    EERPG::Price $price --> Nil) { ... }
-    method successful-bid(EERPG::Price $price --> Nil) { ... }
+    method failed-ask(    EERPG::Price $price --> Nil) { }
+    method successful-ask(EERPG::Price $price --> Nil) { }
+    method failed-bid(    EERPG::Price $price --> Nil) { }
+    method successful-bid(EERPG::Price $price --> Nil) { }
 }
 
 =begin pod

@@ -11,8 +11,8 @@ role EERPG::Commodity:ver<0.0.1>:auth<cpan:ELIZABETH>
 {
     has Str $.nick;
 
-    method Str()  { $.nick }
-    method nick() { $!nick //= $.name.words.tail.lc }
+    method Str( --> Str:D)  { $.nick }
+    method nick(--> Str:D) { $!nick //= $.name.words.tail.lc }
 }
 
 =begin pod
