@@ -15,7 +15,7 @@ role EERPG::Belief:ver<0.0.1>:auth<cpan:ELIZABETH>
       EERPG::Currency $currency = $*CURRENCY
       --> EERPG::Price
     ) {
-        Price.new( ($!min .. $!max).pick, $currency)
+        EERPG::Price.new( ($!min .. $!max).pick, $currency)
     }
 
     method failed-ask(    EERPG::Price $price --> Nil) { ... }

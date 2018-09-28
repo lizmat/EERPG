@@ -1,6 +1,8 @@
 use v6.c;
 
 use EERPG;
+use EERPG::Belief;
+use EERPG::Commodity;
 use EERPG::Inventory;
 use EERPG::Name;
 use EERPG::Resource;
@@ -14,6 +16,7 @@ role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
     has                  $.market    is required;  # Agent belongs to a Market
     has EERPG::Inventory $.inventory is required;  # Agent has an Inventory
     has Int              $.default-volatility = 3; # default price volatility
+    has EERPG::Belief    %.beliefs{EERPG::Commodity};
 }
 
 =begin pod
@@ -29,7 +32,7 @@ EERPG::Agent - EERPG Agent role
     class Person does EERPG::Agent {
     }
 
-    Person.new( :$name, :$market, :$inventory, default-volatility => 7 );
+    Person.new(:$name, :$market, :$inventory, :%beliefs, :$default-volatility);
 
 =head1 DESCRIPTION
 

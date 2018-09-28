@@ -17,6 +17,7 @@
     "EERPG::Amount" : "lib/EERPG/Amount.pm6",
     "EERPG::Ask" : "lib/EERPG/Ask.pm6",
     "EERPG::Availability" : "lib/EERPG/Availability.pm6",
+    "EERPG::Belief" : "lib/EERPG/Belief.pm6",
     "EERPG::Bid" : "lib/EERPG/Bid.pm6",
     "EERPG::Commodity" : "lib/EERPG/Commodity.pm6",
     "EERPG::Condition" : "lib/EERPG/Condition.pm6",
