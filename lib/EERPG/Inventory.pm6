@@ -19,7 +19,9 @@ EERPG::Inventory - EERPG Inventory role / class
 
     use EERPG::Inventory;
 
-    my $inventory = EERPG::Inventory.new( :%commodities );
+    my $inventory = EERPG::Inventory.new(
+      commodities => :{ $food => 42, $drink => 666 }  # needs an object hash
+    );
 
 =head1 DESCRIPTION
 
