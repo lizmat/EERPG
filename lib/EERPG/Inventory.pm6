@@ -3,10 +3,12 @@ use v6.c;
 use EERPG;
 use EERPG::Commodity;
 
+use AccountableBagHash;
+
 role EERPG::Inventory:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 {
-    has %.commodities is BagHash;
+    has %.commodities is AccountableBagHash;
 }
 
 =begin pod
