@@ -8,6 +8,8 @@ class EERPG::Amount:ver<0.0.1>:auth<cpan:ELIZABETH>
 {
 }
 
+sub postfix:<@>(\a) is export { EERPG::Amount.new(a) }
+
 =begin pod
 
 =head1 NAME
