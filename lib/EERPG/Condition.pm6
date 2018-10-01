@@ -7,7 +7,7 @@ role EERPG::Condition:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 {
     method enough-in(EERPG::Inventory:D $ = $*INVENTORY --> Bool:D) { ... }
-    method Bool() { self.enough-in }
+    method Bool(--> Bool:D) { self.enough-in }
 }
 
 =begin pod
@@ -29,9 +29,9 @@ EERPG::Condition - EERPG Condition role / class
 =head1 DESCRIPTION
 
 The C<Condition> role should be consumed by classes that can be used as
-one of the C<conditions> in a L<Rule>.  Such a class should provide an
-C<enough-in> method that returns a Bool indicating there is enough in
-the given L<Inventory> (defaulting to the C<$*INVENTORY> dynamic variable).
+one of the C<conditions> in a L<Rule>.  Such a class should provide a
+C<enough-in> method that returns a Bool indicating there is enough in the given
+L<Inventory> (defaulting to the C<$*INVENTORY> dynamic variable).
 
 =head1 AUTHOR
 

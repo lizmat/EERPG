@@ -1,6 +1,7 @@
 use v6.c;
 
 use EERPG;
+use EERPG::Amount;
 use EERPG::Commodity;
 use EERPG::Condition;
 use EERPG::Inventory;
@@ -10,10 +11,10 @@ class EERPG::Availability:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Condition
 {
     has EERPG::Commodity $.commodity;
-    has Int              $.required;
+    has EERPG::Amount    $.required;
 
     method enough-in(EERPG::Inventory:D $inventory = $*INVENTORY --> Bool:D) {
-        $inventory.commodoties{$!commodity.name} >= $!required
+        $inventory.commodities{$!commodity} >= $!required
     }
 }
 
@@ -27,7 +28,7 @@ EERPG::Availability - EERPG Availability class
 
     use EERPG::Availability;
 
-    my $availability = EERPG::Availability.new(:$commodity, required => 5);
+    my $availability = EERPG::Availability.new(:$commodity, required => 5@);
 
     say "enough $availability.commodity()"
       if $availability;  # assumes $*INVENTORY

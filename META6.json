@@ -4,7 +4,9 @@
     "Elizabeth Mattijsen"
   ],
   "build-depends" : [ ],
-  "depends" : [ "AccountableBagHash" ],
+  "depends" : [
+    "AccountableBagHash"
+  ],
   "description" : "Emergent Economies for Role Playing Games",
   "license" : "Artistic-2.0",
   "name" : "EERPG",
