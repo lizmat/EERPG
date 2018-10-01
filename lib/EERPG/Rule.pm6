@@ -3,12 +3,17 @@ use v6.c;
 use EERPG;
 use EERPG::Action;
 use EERPG::Condition;
+use EERPG::Name;
 
 role EERPG::Rule:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
+  does EERPG::Name
 {
     has EERPG::Condition @.conditions is required;
     has EERPG::Action    @.actions    is required;
+
+    method apply($inventory = $*INVENTORY --> Bool:D) {
+    }
 }
 
 =begin pod
@@ -21,7 +26,7 @@ EERPG::Rule - EERPG Rule role / class
 
     use EERPG::Rule;
 
-    my $rule = EERPG::Rule.new( :@conditions, :@actions );
+    my $rule = EERPG::Rule.new(:$name, :@conditions, :@actions );
 
 =head1 DESCRIPTION
 
