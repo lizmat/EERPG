@@ -4,12 +4,14 @@ use EERPG;
 use EERPG::Amount;
 use EERPG::Commodity;
 
+subset Chance of Numeric where 0 < * <= 1;
+
 role EERPG::Action:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 {
     has EERPG::Commodity $.commodity;
     has EERPG::Amount    $.amount;
-    has Numeric          $.chance = 1;
+    has Chance           $.chance = 1;
 
     method do($inventory = $*INVENTORY --> Bool:D) {
         if rand < $!chance {   # should do the action
