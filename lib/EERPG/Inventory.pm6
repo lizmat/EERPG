@@ -7,8 +7,12 @@ use AccountableBagHash;
 
 role EERPG::Inventory:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
+  does Associative
 {
-    has %.commodities is AccountableBagHash;
+    has %.commodities
+      is required
+      is AccountableBagHash
+      handles <AT-KEY ASSIGN-KEY EXISTS-KEY DELETE-KEY elems>;
 }
 
 =begin pod
