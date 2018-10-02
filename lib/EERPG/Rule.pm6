@@ -13,6 +13,9 @@ role EERPG::Rule:ver<0.0.1>:auth<cpan:ELIZABETH>
     has EERPG::Action    @.actions    is required;
 
     method apply($inventory = $*INVENTORY --> Bool:D) {
+        return False unless .enough-in($inventory) for @!conditions;
+        .do($inventory) for @!actions;
+        True
     }
 }
 
