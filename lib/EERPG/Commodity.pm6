@@ -9,10 +9,6 @@ role EERPG::Commodity:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Name        # A Commodity has a name
   does EERPG::Resource    # A Commodity is a Resource
 {
-    has Str $.nick;
-
-    method Str( --> Str:D)  { $.nick }
-    method nick(--> Str:D) { $!nick //= $.name.words.tail.lc }
 }
 
 =begin pod
@@ -25,14 +21,11 @@ EERPG::Commodity - EERPG Commodity role / class
 
     use EERPG::Commodity;
 
-    my $commodity = EERPG::Commodity.new( name => "Food" );  # nick = "food"
-
-    my $commodity = EERPG::Commodity.new( name => "Food", nick => "grub" );
+    my $commodity = EERPG::Commodity.new( name => "food" );
 
 =head1 DESCRIPTION
 
-The C<Commodity> role / class describes a commodity.  It takes a L<Name> and
-an optional nick(name).
+The C<Commodity> role / class describes a commodity.  It takes a L<Name>;
 
 =head1 AUTHOR
 

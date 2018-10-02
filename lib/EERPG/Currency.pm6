@@ -19,14 +19,12 @@ EERPG::Currency - EERPG Currency role / object
 
     use EERPG::Currency;
 
-    my $credit = Currency.new( name => 'Credit' );  # nick = credit
-
-    my $credit = Currency.new( name => 'Credit', nick => 'dough' );
+    my $credit = Currency.new( name => 'credit' );
 
 =head1 DESCRIPTION
 
 The C<Currency> role / class describes a currency to be used to express
-L<Price>s in.  It has a L<Name> and an optional nick(name).
+L<Price>s in.  It has a L<Name>.
 
 =head1 AUTHOR
 
