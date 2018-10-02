@@ -1,7 +1,7 @@
 use v6.c;
 use Test;
 
-plan 6;
+plan 9;
 
 use EERPG::Amount;
 use EERPG::Availability;
@@ -23,5 +23,9 @@ my $*INVENTORY = Inventory.new( commodities => :{ $food => 42 } );
 ok $av.enough-in, 'do we have enough availability using default inventory';
 ok $av.Bool,      'do we have enough availability using default inventory';
 ok $av.enough-in($*INVENTORY), 'enough availability using  inventory';
+
+dies-ok { Availability.new(required => 5@) },     'dies without commodity';
+dies-ok { Availability.new(commodity => $food) }, 'dies without required';
+dies-ok { Availability.new() },                   'dies without anything';
 
 # vim: ft=perl6 expandtab sw=4

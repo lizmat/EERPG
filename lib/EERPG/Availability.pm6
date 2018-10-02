@@ -10,8 +10,8 @@ class EERPG::Availability:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
   does EERPG::Condition
 {
-    has EERPG::Commodity $.commodity;
-    has EERPG::Amount    $.required;
+    has EERPG::Commodity $.commodity is required;
+    has EERPG::Amount    $.required  is required;
 
     method enough-in(EERPG::Inventory:D $inventory = $*INVENTORY --> Bool:D) {
         $inventory.commodities{$!commodity} >= $!required
