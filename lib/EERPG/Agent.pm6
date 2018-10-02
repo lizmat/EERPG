@@ -17,6 +17,11 @@ role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
     has EERPG::Inventory $.inventory is required;  # Agent has an Inventory
     has Int              $.default-volatility = 3; # default price volatility
     has EERPG::Belief    %.beliefs{EERPG::Commodity};
+
+    multi method TWEAK(::?ROLE:D:) {
+        callsame;
+        # local tweaks
+    }
 }
 
 =begin pod

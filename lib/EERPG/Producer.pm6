@@ -7,6 +7,13 @@ role EERPG::Producer:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Agent          # Producer is an Agent
 {
     has EERPG::Ruleset $.ruleset is required;
+
+    multi method TWEAK(::?ROLE:D:) { 
+        callsame;
+        # local tweaks
+    }
+
+    method produce(--> Bool:D) { $!ruleset.apply($.inventory) }
 }
 
 =begin pod
