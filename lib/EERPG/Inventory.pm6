@@ -31,8 +31,11 @@ EERPG::Inventory - EERPG Inventory role / class
 
 =head1 DESCRIPTION
 
-The C<Inventory> role / class provides the place to store the posessions
-of L<Agent>s such as a L<Trader> or a L<Producer>.
+The C<Inventory> role / class provides the place to store the possessions
+of an L<Agent>s such as a L<Trader> or a L<Producer>.
+
+The C<Inventory> role also does the C<Associative> role, so you can directly
+access the commodities of an C<Inventory> as if it was a C<Hash>.
 
 =head1 AUTHOR
 
