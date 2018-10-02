@@ -9,8 +9,8 @@ subset Chance of Numeric where 0 < * <= 1;
 role EERPG::Action:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
 {
-    has EERPG::Commodity $.commodity;
-    has EERPG::Amount    $.amount;
+    has EERPG::Commodity $.commodity is required;
+    has EERPG::Amount    $.amount    is required;
     has Chance           $.chance = 1;
 
     method do($inventory = $*INVENTORY --> Bool:D) {

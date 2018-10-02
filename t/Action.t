@@ -1,7 +1,7 @@
 use v6.c;
 use Test;
 
-plan 12;
+plan 17;
 
 use EERPG::Amount;
 use EERPG::Action;
@@ -35,5 +35,12 @@ is $*INVENTORY.commodities{$food}, 52 - $done, 'right amount got deducted';
 $ac = Action.new(commodity => $food, amount => 0@);
 ok $ac.do, 'did we do the action';
 nok $*INVENTORY.commodities{$food}:exists, 'did food get removed';
+
+dies-ok { Action.new(commodity => $food) }, 'dies without amount';
+dies-ok { Action.new(amount => -1@) },      'dies with commodity';
+dies-ok { Action.new() },                   'dies without anything';
+dies-ok { Action.new(commodity => $food, amount => -1@, chance => $_) },
+  "did an out-of-range chance of $_ die"
+  for -0.1, 1.1;
 
 # vim: ft=perl6 expandtab sw=4
