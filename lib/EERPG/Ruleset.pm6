@@ -5,8 +5,16 @@ use EERPG::Rule;
 
 role EERPG::Ruleset:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
+  does Positional
 {
-    has EERPG::Rule @.rules;
+    has EERPG::Rule @.rules
+      is required
+      handles <AT-POS ASSIGN-POS EXISTS-POS DELETE-POS elems>;
+
+    method apply($inventory = $*INVENTORY --> Bool:D) {
+        return True if .apply($inventory) for @!rules;
+        False
+    }
 }
 
 =begin pod
