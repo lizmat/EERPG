@@ -9,7 +9,7 @@ class EERPG::Price:ver<0.0.1>:auth<cpan:ELIZABETH> is Int {
     method new($value, $currency = $*CURRENCY) {
         self.Int::new($value)!SET-SELF($currency)
     }
-    method gist() { self.Str ~ ' ' ~ $!currency.nick }
+    method gist() { self.Str ~ ' ' ~ $!currency.name }
 }
 
 =begin pod

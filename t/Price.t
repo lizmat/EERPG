@@ -9,8 +9,8 @@ use EERPG::Price;
 my constant Currency = EERPG::Currency;
 my constant Price    = EERPG::Price;
 
-my $*CURRENCY = Currency.new( :name<Credit>, :nick<dough> );
-my $dollar = Currency.new( :name<Dollar> );
+my $*CURRENCY = Currency.new( :name<credit> );
+my $dollar    = Currency.new( :name<dollar> );
 
 my $p = Price.new(42);
 does-ok $p, EERPG::Price;
