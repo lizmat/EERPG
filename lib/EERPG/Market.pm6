@@ -9,8 +9,8 @@ role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
   does EERPG::Name
 {
-    has EERPG::Producer @.producers;
-    has EERPG::Trader   @.traders;
+    has EERPG::Producer @.producers is required;
+    has EERPG::Trader   @.traders   is required;
 }
 
 =begin pod
