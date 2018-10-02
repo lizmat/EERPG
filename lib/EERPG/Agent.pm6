@@ -13,7 +13,7 @@ role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Resource  # Agents are a Resource
 {
     # cannot enforce EERPG::Market here because of circularity
-    has                  $.market    is required;  # Agent belongs to a Market
+    has                  $.market = $*MARKET;      # Agent belongs to a Market
     has EERPG::Inventory $.inventory is required;  # Agent has an Inventory
     has Int              $.default-volatility = 3; # default price volatility
     has EERPG::Belief    %.beliefs{EERPG::Commodity};
