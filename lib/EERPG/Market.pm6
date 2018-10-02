@@ -11,10 +11,17 @@ role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
   does EERPG::Name
 {
+    # cannot enforce EERPG::Economy here because of circularity
+    has                 $.economy = $*ECONOMY;  # Market belongs to an Economy
     has EERPG::Producer %.producers does WriteOnce;
     has EERPG::Trader   %.traders   does WriteOnce;
 
+    multi method TWEAK(::?ROLE:D:) {
+        callsame;
 
+        # register ourselves with the economy
+        $.economy.markets{$.name} = self;
+    }
 }
 
 =begin pod
