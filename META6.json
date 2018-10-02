@@ -5,7 +5,8 @@
   ],
   "build-depends" : [ ],
   "depends" : [
-    "AccountableBagHash"
+    "AccountableBagHash:ver<0.0.2>:auth<cpan:ELIZABETH>",
+    "WriteOnceHash:ver<0.0.2>:auth<cpan:ELIZABETH>"
   ],
   "description" : "Emergent Economies for Role Playing Games",
   "license" : "Artistic-2.0",

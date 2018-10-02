@@ -1,5 +1,7 @@
 use v6.c;
 
+use WriteOnceHash;
+
 use EERPG;
 use EERPG::Name;
 use EERPG::Producer;
@@ -9,8 +11,8 @@ role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG
   does EERPG::Name
 {
-    has EERPG::Producer %.producers;
-    has EERPG::Trader   %.traders;
+    has EERPG::Producer %.producers does WriteOnce;
+    has EERPG::Trader   %.traders   does WriteOnce;
 
 
 }
