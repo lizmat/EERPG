@@ -1,5 +1,7 @@
 use v6.c;
 
+use WriteOnceHash;
+
 use EERPG;
 use EERPG::Commodity;
 use EERPG::Currency;
@@ -11,13 +13,18 @@ role EERPG::Economy:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Name
 {
     has EERPG::Currency  @.currencies;
-    has EERPG::Market    @.markets     is required;
-    has EERPG::Commodity @.commodities is required;
+    has EERPG::Market    %.markets does WriteOnce;
+    has EERPG::Commodity %!commodities
+      does WriteOnce
+      handles <AT-KEY ASSIGN-KEY BIND-KEY EXISTS-KEY DELETE-KEY elems>;
 
-    method TWEAK() {
+    method TWEAK(:@commodities) {
         @!currencies.push($*CURRENCY) unless @!currencies;
+
+        %!commodities{.name} = $_ for @commodities;
     }
-    method currency() { @!currencies[0] }
+    method currency()    { @!currencies[0] }
+    method commodities() { %!commodities }
 }
 
 =begin pod
@@ -30,9 +37,7 @@ EERPG::Economy - EERPG Economy role / class
 
     use EERPG::Economy;
 
-    my $economy = EERPG::Economy.new(
-      name => 'The World', :@markets, :@commodities
-    );
+    my $economy = EERPG::Economy.new(name => 'The World', :@commodities);
 
 =head1 DESCRIPTION
 

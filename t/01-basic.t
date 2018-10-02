@@ -11,20 +11,14 @@ my $*CURRENCY = Currency.new( name => 'Credit', nick => 'credit' );
 my $price = Price.new(42);
 #say $price;
 
-my @commodities = (
-  Armor       => 'armor',
-  Cloth       => 'cloth',
-  Fertilizer  => 'fertilizer',
-  Food        => 'food',
-  Hydroponics => 'hydroponics',
-  Leather     => 'leather',
-  Metal       => 'metal',
-  Ore         => 'ore',
-  Weapon      => 'weapon',
-  Water       => 'water',
-).map: { Commodity.new( name => .key, nick => .value ) }
+my @commodities = <
+  armor cloth fertilizer food hydroponics leather metal ore weapon water
+>.map: -> $name { Commodity.new(:$name) }
 
-my @markets = (
+my $*ECONOMY = Economy.new(name => "After Catastrophe", :@commodities);
+#dd $*ECONOMY;
+
+Market.new( name => $_ ) for
   "Tau Station",
   "København",
   "Daedalus",
@@ -39,12 +33,8 @@ my @markets = (
   "Spirit of Botswana",
   "Bordeaux Station",
   "Yards of Gadani",
-).map: { Market.new( name => $_ ) }
+;
 
-my $economy = Economy.new(
-  name => "After Catastrophe", :@markets, :@commodities
-);
-
-#dd $economy;
+#dd $*ECONOMY;
 
 # vim: ft=perl6 expandtab sw=4
