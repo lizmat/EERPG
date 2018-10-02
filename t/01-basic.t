@@ -6,7 +6,7 @@ plan 1;
 use EERPG::All;
 pass "All modules compiled";
 
-my $*CURRENCY = Currency.new( name => 'Credit', nick => 'credit' );
+my $*CURRENCY = Currency.new( name => 'credit' );
 
 my $price = Price.new(42);
 #say $price;

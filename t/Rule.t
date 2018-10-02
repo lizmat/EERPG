@@ -17,7 +17,7 @@ my constant Commodity    = EERPG::Commodity;
 my constant Inventory    = EERPG::Inventory;
 my constant Rule         = EERPG::Rule;
 
-my $food = Commodity.new( :name<Food>, :nick<grub> );
+my $food = Commodity.new( :name<food> );
 my $*INVENTORY = Inventory.new( commodities => :{ $food => 42 } );
 
 my $av = Availability.new(commodity => $food, required => 5@);

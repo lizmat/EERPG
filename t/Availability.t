@@ -13,7 +13,7 @@ my constant Availability = EERPG::Availability;
 my constant Commodity    = EERPG::Commodity;
 my constant Inventory    = EERPG::Inventory;
 
-my $food = Commodity.new( :name<Food>, :nick<grub> );
+my $food = Commodity.new( :name<food> );
 my $av   = Availability.new(commodity => $food, required => 5@);
 does-ok $av, EERPG::Availability;
 is-deeply $av.commodity, $food     ,    'did we get the commodity back';
