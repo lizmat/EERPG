@@ -10,7 +10,9 @@ role EERPG::Producer:ver<0.0.1>:auth<cpan:ELIZABETH>
 
     multi method TWEAK(::?ROLE:D:) { 
         callsame;
-        # local tweaks
+
+        # register ourselves with the Market
+        $.market.producers{$.name} = self;
     }
 
     method produce(--> Bool:D) { $!ruleset.apply($.inventory) }

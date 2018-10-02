@@ -5,6 +5,12 @@ use EERPG::Agent;
 role EERPG::Trader:ver<0.0.1>:auth<cpan:ELIZABETH>
   does EERPG::Agent          # Trader is an Agent
 {
+    multi method TWEAK(::?ROLE:D:) {
+        callsame;
+
+        # register ourselves with the Market
+        $.market.traders{$.name} = self;
+    }
 }
 
 =begin pod
