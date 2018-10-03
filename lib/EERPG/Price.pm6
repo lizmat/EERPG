@@ -2,12 +2,18 @@ use v6.c;
 
 use EERPG::Currency;
 
-class EERPG::Price:ver<0.0.1>:auth<cpan:ELIZABETH> is Int {
+class EERPG::Price:ver<0.0.1>:auth<cpan:ELIZABETH> is Rat {
     has EERPG::Currency $.currency;
 
     method !SET-SELF($!currency) { self }
     method new($value, $currency = $*CURRENCY) {
-        self.Int::new($value)!SET-SELF($currency)
+        $value ~~ Int
+          ?? self.Rat::new($value)!SET-SELF($currency)
+          !! $value ~~ Rat
+            ?? self.Rat::new(
+                 $value.numerator, $value.denominator
+               )!SET-SELF($currency)
+            !! die "Only Rat and Int supported as Price";
     }
     method gist() { self.Str ~ ' ' ~ $!currency.name }
 }

@@ -17,9 +17,9 @@ does-ok $p, EERPG::Price;
 is $p, 42, 'did we get 42';
 is-deeply $p.currency, $*CURRENCY, 'did it get credits';
 
-$p = Price.new(666, $dollar);
+$p = Price.new(66.6, $dollar);
 does-ok $p, EERPG::Price;
-is $p, 666, 'did we get 666';
+is $p, 66.6, 'did we get 66.6';
 is-deeply $p.currency, $dollar, 'did it get dollars';
 
 # vim: ft=perl6 expandtab sw=4
