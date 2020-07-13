@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/lizmat/EERPG.svg?branch=master)](https://travis-ci.org/lizmat/EERPG)
-
 NAME
 ====
 
@@ -27,7 +25,7 @@ Source can be located at: https://github.com/lizmat/EERPG . Comments and Pull Re
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
