@@ -17,14 +17,16 @@ jobs:
           - macOS-latest
           - windows-latest
         raku-version:
-          - 'latest'
+          - '2020.06'
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: Raku/setup-raku@v1
         with:
           raku-version: ${{ matrix.raku-version }}
+      - name: Install Dependencies
+        run: zef install --/test --deps-only .
       - name: Show Version
         run: raku --version
       - name: Run Tests
-        run: raku -Ilib t/01-basic.t
+        run: prove -v -e 'raku --ll-exception -I.' t
