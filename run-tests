@@ -1,0 +1,8 @@
+run <raku --version>;
+
+my $failed = 0;
+for "t".IO.dir(:test(*.ends-with: '.t' | '.rakutest')).map(*.Str).sort {
+    say "=== $_ ==="; $*OUT.flush;
+    $failed++ unless run "raku", "-Ilib", $_;
+}
+exit $failed
