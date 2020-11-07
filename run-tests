@@ -1,8 +1,21 @@
-run <raku --version>;
+say run(<raku --version>, :out).out.slurp;
+
+say "Testing {"dist.ini".IO.lines.head.substr(7)}";
 
 my $failed = 0;
 for "t".IO.dir(:test(*.ends-with: '.t' | '.rakutest')).map(*.Str).sort {
-    say "=== $_ ==="; $*OUT.flush;
-    $failed++ unless run "raku", "-Ilib", $_;
+    say "=== $_";
+    my $proc = run "raku", "-Ilib", $_, :out;
+    if $proc {
+        $proc.out.slurp;
+    }
+    else {
+        $failed++;
+        say $proc.out.slurp;
+        say "  FAILED";
+        say "";
+    }
 }
+
+say $failed ?? "$failed FAILED" !! "ALL OK";
 exit $failed

@@ -26,7 +26,5 @@ jobs:
           raku-version: ${{ matrix.raku-version }}
       - name: Install Dependencies
         run: zef install --/test --deps-only .
-      - name: Show Version
-        run: raku --version
       - name: Run Tests
-        run: prove -v -e 'raku --ll-exception -I.' t
+        run: raku run-tests
