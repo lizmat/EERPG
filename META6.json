@@ -1,46 +1,49 @@
 {
-  "auth" : "cpan:ELIZABETH",
-  "authors" : [
+  "auth": "zef:lizmat",
+  "authors": [
     "Elizabeth Mattijsen"
   ],
-  "build-depends" : [ ],
-  "depends" : [
-    "AccountableBagHash:ver<0.0.3>:auth<cpan:ELIZABETH>",
-    "WriteOnceHash:ver<0.0.4>:auth<cpan:ELIZABETH>"
+  "build-depends": [
   ],
-  "description" : "Emergent Economies for Role Playing Games",
-  "license" : "Artistic-2.0",
-  "name" : "EERPG",
-  "perl" : "6.c",
-  "provides" : {
-    "EERPG" : "lib/EERPG.pm6",
-    "EERPG::Action" : "lib/EERPG/Action.pm6",
-    "EERPG::Agent" : "lib/EERPG/Agent.pm6",
-    "EERPG::All" : "lib/EERPG/All.pm6",
-    "EERPG::Amount" : "lib/EERPG/Amount.pm6",
-    "EERPG::Ask" : "lib/EERPG/Ask.pm6",
-    "EERPG::Availability" : "lib/EERPG/Availability.pm6",
-    "EERPG::Belief" : "lib/EERPG/Belief.pm6",
-    "EERPG::Bid" : "lib/EERPG/Bid.pm6",
-    "EERPG::Commodity" : "lib/EERPG/Commodity.pm6",
-    "EERPG::Condition" : "lib/EERPG/Condition.pm6",
-    "EERPG::Currency" : "lib/EERPG/Currency.pm6",
-    "EERPG::Economy" : "lib/EERPG/Economy.pm6",
-    "EERPG::Inventory" : "lib/EERPG/Inventory.pm6",
-    "EERPG::Market" : "lib/EERPG/Market.pm6",
-    "EERPG::Name" : "lib/EERPG/Name.pm6",
-    "EERPG::Price" : "lib/EERPG/Price.pm6",
-    "EERPG::Producer" : "lib/EERPG/Producer.pm6",
-    "EERPG::Resource" : "lib/EERPG/Resource.pm6",
-    "EERPG::Rule" : "lib/EERPG/Rule.pm6",
-    "EERPG::Ruleset" : "lib/EERPG/Ruleset.pm6",
-    "EERPG::Trader" : "lib/EERPG/Trader.pm6"
+  "depends": [
+    "AccountableBagHash:ver<0.0.4>:auth<zef:lizmat>",
+    "WriteOnceHash:ver<0.0.6>:auth<zef:lizmat>"
+  ],
+  "description": "Emergent Economies for Role Playing Games",
+  "license": "Artistic-2.0",
+  "name": "EERPG",
+  "perl": "6.c",
+  "provides": {
+    "EERPG": "lib/EERPG.rakumod",
+    "EERPG::Action": "lib/EERPG/Action.rakumod",
+    "EERPG::Agent": "lib/EERPG/Agent.rakumod",
+    "EERPG::All": "lib/EERPG/All.rakumod",
+    "EERPG::Amount": "lib/EERPG/Amount.pm6",
+    "EERPG::Ask": "lib/EERPG/Ask.rakumod",
+    "EERPG::Availability": "lib/EERPG/Availability.rakumod",
+    "EERPG::Belief": "lib/EERPG/Belief.rakumod",
+    "EERPG::Bid": "lib/EERPG/Bid.rakumod",
+    "EERPG::Commodity": "lib/EERPG/Commodity.rakumod",
+    "EERPG::Condition": "lib/EERPG/Condition.rakumod",
+    "EERPG::Currency": "lib/EERPG/Currency.rakumod",
+    "EERPG::Economy": "lib/EERPG/Economy.rakumod",
+    "EERPG::Inventory": "lib/EERPG/Inventory.rakumod",
+    "EERPG::Market": "lib/EERPG/Market.rakumod",
+    "EERPG::Name": "lib/EERPG/Name.rakumod",
+    "EERPG::Price": "lib/EERPG/Price.rakumod",
+    "EERPG::Producer": "lib/EERPG/Producer.rakumod",
+    "EERPG::Resource": "lib/EERPG/Resource.rakumod",
+    "EERPG::Rule": "lib/EERPG/Rule.rakumod",
+    "EERPG::Ruleset": "lib/EERPG/Ruleset.rakumod",
+    "EERPG::Trader": "lib/EERPG/Trader.rakumod"
   },
-  "resources" : [ ],
-  "source-url" : "https://github.com/lizmat/EERPG.git",
-  "tags" : [
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/EERPG.git",
+  "tags": [
     "MODEL"
   ],
-  "test-depends" : [ ],
-  "version" : "0.0.1"
+  "test-depends": [
+  ],
+  "version": "0.0.2"
 }

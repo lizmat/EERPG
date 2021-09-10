@@ -1,6 +1,6 @@
-use v6.c;
+use v6.*;
 
-use WriteOnceHash;
+use WriteOnceHash:ver<0.0.6>:auth<zef:lizmat>;
 
 use EERPG;
 use EERPG::Commodity;
@@ -8,7 +8,7 @@ use EERPG::Currency;
 use EERPG::Market;
 use EERPG::Name;
 
-role EERPG::Economy:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Economy:ver<0.0.2>:auth<zef:lizmat>
   does EERPG
   does EERPG::Name
 {
@@ -53,14 +53,14 @@ C<Currency>, C<Market> and C<Commidity> information.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/EERPG . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

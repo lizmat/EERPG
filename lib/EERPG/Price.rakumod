@@ -1,8 +1,8 @@
-use v6.c;
+use v6.*;
 
 use EERPG::Currency;
 
-class EERPG::Price:ver<0.0.1>:auth<cpan:ELIZABETH> is Rat {
+class EERPG::Price:ver<0.0.2>:auth<zef:lizmat> is Rat {
     has EERPG::Currency $.currency;
 
     method !SET-SELF($!currency) { self }
@@ -39,7 +39,7 @@ Integers with actual amounts of L<Currency>.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 EERPG is an implementation of the "Emergent Economies for Role Playing Games"
 white paper by Jonathan Doran and Ian Parberry.
@@ -49,7 +49,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

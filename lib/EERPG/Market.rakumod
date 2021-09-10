@@ -1,13 +1,13 @@
-use v6.c;
+use v6.*;
 
-use WriteOnceHash;
+use WriteOnceHash:ver<0.0.6>:auth<zef:lizmat>;
 
 use EERPG;
 use EERPG::Name;
 use EERPG::Producer;
 use EERPG::Trader;
 
-role EERPG::Market:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Market:ver<0.0.2>:auth<zef:lizmat>
   does EERPG
   does EERPG::Name
 {
@@ -45,7 +45,7 @@ market.  It requires a L<Name>, and should have L<Producers>s and L<Trader>s.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 EERPG is an implementation of the "Emergent Economies for Role Playing Games"
 white paper by Jonathan Doran and Ian Parberry.
@@ -55,7 +55,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

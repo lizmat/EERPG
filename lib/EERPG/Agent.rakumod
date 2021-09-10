@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 
 use EERPG;
 use EERPG::Belief;
@@ -7,7 +7,7 @@ use EERPG::Inventory;
 use EERPG::Name;
 use EERPG::Resource;
 
-role EERPG::Agent:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Agent:ver<0.0.2>:auth<zef:lizmat>
   does EERPG
   does EERPG::Name      # Agent must have a name
   does EERPG::Resource  # Agents are a Resource
@@ -52,7 +52,7 @@ a value of B<3> will be assumed.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 EERPG is an implementation of the "Emergent Economies for Role Playing Games"
 white paper by Jonathan Doran and Ian Parberry.
@@ -62,7 +62,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

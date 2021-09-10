@@ -1,11 +1,11 @@
-use v6.c;
+use v6.*;
 
 use EERPG;
 use EERPG::Action;
 use EERPG::Condition;
 use EERPG::Name;
 
-role EERPG::Rule:ver<0.0.1>:auth<cpan:ELIZABETH>
+role EERPG::Rule:ver<0.0.2>:auth<zef:lizmat>
   does EERPG
   does EERPG::Name
 {
@@ -38,7 +38,7 @@ return C<True> before all of the L<Actions> are performed.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 EERPG is an implementation of the "Emergent Economies for Role Playing Games"
 white paper by Jonathan Doran and Ian Parberry.
@@ -48,7 +48,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

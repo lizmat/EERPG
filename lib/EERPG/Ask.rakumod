@@ -1,25 +1,31 @@
-use v6.c;
+use v6.*;
 
-unit role EERPG::Resource:ver<0.0.1>:auth<cpan:ELIZABETH>;
+use EERPG;
+use EERPG::Amount;
+use EERPG::Price;
+
+role EERPG::Ask:ver<0.0.2>:auth<zef:lizmat>
+  does EERPG
+{
+    has EERPG::Price  $.price is required;
+    has EERPG::Amount $.ideal is required;
+}
 
 =begin pod
 
 =head1 NAME
 
-EERPG::Resource - EERPG Resource role
+EERPG::Ask - EERPG Ask role / class
 
 =head1 SYNOPSIS
 
-    use EERPG::Resource;  # indicate the object is a resource
+    use EERPG::Ask;
 
 =head1 DESCRIPTION
 
-The C<Resource> role is only intended to mark objects as a resource.
-It is not intended to be used as a class.
-
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 EERPG is an implementation of the "Emergent Economies for Role Playing Games"
 white paper by Jonathan Doran and Ian Parberry.
@@ -29,7 +35,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018, 2021 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

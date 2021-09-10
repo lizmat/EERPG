@@ -2,5 +2,12 @@ Revision history for EERPG
 
 {{$NEXT}}
 
+0.0.2  2021-09-10T10:06:02+02:00
+    - Change file extension to .rakumod
+    - Migrate to zef ecosystem
+    - Update email address
+    - Update copyright year
+    - Update and tighten dependencies
+
 0.0.1  2020-07-13T16:25:49+02:00
     - Initial version
